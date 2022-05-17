@@ -48,10 +48,12 @@ public class Loginuser extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                cekLogin();
+
+                    cekLogin();
+
+
             }
         });
-
 
         back2 = findViewById(R.id.txtRegister2);
         back2.setOnClickListener(new View.OnClickListener() {
@@ -67,15 +69,21 @@ public class Loginuser extends AppCompatActivity {
     private void cekLogin() {
         email =  Etemail.getText().toString();
         password = Etpassword.getText().toString();
+        username = Etusername.getText().toString();
 
         mAuth.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Intent i = new Intent(Loginuser.this, MainActivity.class);
-                    startActivity(i);
-                    Toast.makeText(Loginuser.this, "Login Success", Toast.LENGTH_SHORT).show();
+                    if (username.length()!= 0){
+                        Intent i = new Intent(Loginuser.this, MainActivity.class);
+                        i.putExtra("username", username);
+                        startActivity(i);
+                        Toast.makeText(Loginuser.this, "Login Success", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(Loginuser.this, "Silahkan Isi Username", Toast.LENGTH_SHORT).show();
+                    }
 
                 }
                 else{

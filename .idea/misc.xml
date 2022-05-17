@@ -3,17 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/activity_dashbor_admin.xml" value="0.1802536231884058" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/activity_detail.xml" value="0.25" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/activity_login.xml" value="0.19375" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/activity_loginuser.xml" value="0.22" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/card.xml" value="0.33" />
+        <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/fragment_cart.xml" value="0.22" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/fragment_home.xml" value="0.16485507246376813" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/fragment_menu.xml" value="0.25" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/fragment_settings.xml" value="0.16485507246376813" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/item.xml" value="0.25" />
+        <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/item2.xml" value="0.25" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/test.xml" value="0.1802536231884058" />
+        <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/testt.xml" value="0.18072916666666666" />
+        <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/layout/testtt.xml" value="0.25" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/menu/menu2.xml" value="0.25" />
         <entry key="..\:/Icall/Pemob/UAS_PAM/app/src/main/res/menu/search.xml" value="0.1" />
         <entry key="..\:/UAS_PAM/UAS_PAM/app/src/main/res/layout/activity_loginuser.xml" value="0.17552083333333332" />

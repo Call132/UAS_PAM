@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragments = new menu1();
                             break;
 
-                        case R.id.setting:
-                            selectedFragments = new settings();
+                        case R.id.Cart:
+                            selectedFragments = new cart();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().

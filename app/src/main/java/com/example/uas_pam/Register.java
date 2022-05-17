@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Register extends AppCompatActivity {
-    EditText email, password, conpass;
+    EditText email, password,username, conpass;
     Button regis;
     FirebaseAuth mAuth;
     String Email, pass1, pass2;
@@ -28,6 +28,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
 
+        username = findViewById(R.id.etUsername);
         email = findViewById(R.id.etEmail);
         password = findViewById(R.id.etPassword);
         conpass = findViewById(R.id.etPass);
@@ -36,12 +37,11 @@ public class Register extends AppCompatActivity {
         regis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (pass1 != pass2){
-                    Toast.makeText(Register.this, "password tidak sama", Toast.LENGTH_SHORT).show();
-                }
-                registrasi();
-                Intent i = new Intent(Register.this, Loginuser.class);
-                startActivity(i);
+
+                    registrasi();
+                    Intent i = new Intent(Register.this, Loginuser.class);
+                    startActivity(i);
+
             }
         });
     }
