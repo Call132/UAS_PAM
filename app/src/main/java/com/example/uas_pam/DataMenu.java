@@ -1,17 +1,32 @@
 package com.example.uas_pam;
 
 public class DataMenu {
-    String Nama, Harga, mUrl;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
+
+    String Nama, Harga, mUrl, id;
 
     public DataMenu(){
 
     }
 
     public DataMenu(String nama, String harga, String mUrl) {
-        Nama = nama;
-        Harga = harga;
+        this.Nama = nama;
+        this.Harga = harga;
         this.mUrl = mUrl;
+
     }
+
+
 
     public String getNama() {
         return Nama;

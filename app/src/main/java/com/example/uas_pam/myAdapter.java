@@ -2,9 +2,12 @@ package com.example.uas_pam;
 
 
 
+import android.annotation.SuppressLint;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,52 +25,28 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+
 import java.util.Map;
 
 
-public class myAdapter extends FirebaseRecyclerAdapter<DataMenu, myAdapter.MyViewHolder> {
+public class myAdapter extends FirebaseRecyclerAdapter<dataCart, myAdapter.MyViewHolder> {
+    DatabaseReference db;
 
-    public myAdapter(@NonNull FirebaseRecyclerOptions<DataMenu> options) {
+
+    public myAdapter(@NonNull FirebaseRecyclerOptions<dataCart> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull DataMenu model) {
+    protected void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull dataCart model) {
 
-        holder.nama.setText(model.getNama());
+         holder.nama.setText(model.getNama());
          holder.harga.setText(model.getHarga());
 
         Glide.with(holder.img.getContext())
                 .load(model.getmUrl()).into(holder.img);
 
-        holder.checkbox.setOnCheckedChangeListener((compoundButton, isChecked) -> {
-            DatabaseReference db;
-            db = FirebaseDatabase.getInstance().getReference().child("Cart");
 
-            Map<String, Object> menu = new HashMap<>();
-            menu.put("Nama", model.getNama());
-            menu.put("Harga", model.getHarga());
-            menu.put("mUrl", model.getmUrl());
-            if(isChecked){
-
-                db.push().setValue(menu).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(compoundButton.getContext(), model.getNama()  + " berhasil Ditambahkan" , Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-            }else {
-
-                db.child(getRef(position).getKey()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(compoundButton.getContext(), model.getNama() + " berhasil dihapus", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-            }
-        });
 
 
     }
@@ -75,7 +54,7 @@ public class myAdapter extends FirebaseRecyclerAdapter<DataMenu, myAdapter.MyVie
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item2,parent,false);
 
         return new MyViewHolder(v);
 
@@ -84,11 +63,11 @@ public class myAdapter extends FirebaseRecyclerAdapter<DataMenu, myAdapter.MyVie
 
     static class MyViewHolder extends RecyclerView.ViewHolder{
        TextView nama, harga;
-       CheckBox checkbox;
+       Button hapus;
        ImageView img;
 
 
-       ConstraintLayout MainLayout;
+       ConstraintLayout cart;
 
        public MyViewHolder(@NonNull View itemView) {
            super(itemView);
@@ -96,18 +75,13 @@ public class myAdapter extends FirebaseRecyclerAdapter<DataMenu, myAdapter.MyVie
            nama = (TextView) itemView.findViewById(R.id.tv_name);
            harga = (TextView) itemView.findViewById(R.id.tv_harga);
            img = (ImageView) itemView.findViewById(R.id.gmbar);
-           MainLayout = itemView.findViewById(R.id.mainLayout);
-           checkbox = (CheckBox) itemView.findViewById(R.id.checkBox2);
-
-
-
-
-
-
+           cart = itemView.findViewById(R.id.cartLayout);
+           hapus = (Button) itemView.findViewById(R.id.btnHapus);
 
 
        }
 
    }
+
 
 }
